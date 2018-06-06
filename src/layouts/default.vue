@@ -25,8 +25,11 @@ export default {
     modelHex: '#C7044B'
   }),
   watch: {
-    modelHex: function (val, oldVal) {
-      colors.setBrand('primary', val)
+    modelHex: {
+      handler (val, oldVal) {
+        colors.setBrand('primary', val)
+      },
+      immediate: true
     }
   }
 }
